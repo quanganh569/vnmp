@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-6"></div>
+      <div class="searchbar col-md-6 ">
+         <input class="search_input form-control input-sm " type="text" name="" placeholder="Search..." [(ngModel)]="searchText">
+      </div>
+  </div>
+  <br/>
+  <table class="table table-hover table-bordered" matSort (matSortChange)="sortlstAccountDomain($event)">
+    <thead class="thead-light">
+      <tr >
+        <th scope="col" mat-sort-header="Domain">Domain</th>
+        <th scope="col" mat-sort-header="Count">Count</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of lstAccountDomain|filter:searchText|paginate: { itemsPerPage: 10, currentPage: p7, id: 'seventh'} ">
+        <td>{{item.Domain}}</td>
+        <td>{{item.Count}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p7 = $event" id="seventh"></pagination-controls>

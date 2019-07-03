@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6"></div>
+    <div class="searchbar col-md-6 ">
+       <input class="search_input form-control input-sm " type="text" name="" placeholder="Search..." [(ngModel)]="searchText">
+    </div>
+</div>
+<br/>
+<table class="table table-hover table-bordered" matSort (matSortChange)="sortlstLOCATION($event)">
+  <thead class="thead-light">
+    <tr >
+      <th scope="col" mat-sort-header="Address">Location</th>
+      <th scope="col" mat-sort-header="IP">IP</th>
+      <th scope="col" mat-sort-header="Purpose">Purpose</th>
+      <th scope="col" mat-sort-header="Domain">Domain</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of lstLOCATION|filter:searchText|paginate: { itemsPerPage: 10, currentPage: p2, id: 'second'}">
+      <td>{{item.Address}}</td>
+      <td>{{item.IP}}</td>
+      <td>{{item.Purpose}}</td>
+      <td>{{item.Domain}}</td>
+      
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p2 = $event" id="second"></pagination-controls>

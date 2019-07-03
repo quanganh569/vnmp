@@ -1,0 +1,87 @@
+
+<div class="row"> <!--DASHBOARD WEBBOX-->
+    <div class="col-xl-12">
+        <kt-portlet [class]="'kt-portlet'">
+            <kt-portlet-body>
+                <kt-webbox></kt-webbox>
+            </kt-portlet-body>
+        </kt-portlet>
+    </div>
+</div>
+<div class="row"> <!--DASHBOARD LOCATION-->
+    <div class="col-xl-12">
+        <kt-portlet [class]="'kt-portlet'">
+            <kt-portlet-header [title]="'Botnet by location'">
+            </kt-portlet-header>
+            <kt-portlet-body>
+                <kt-botnet-by-location></kt-botnet-by-location>
+            </kt-portlet-body>
+        </kt-portlet>
+    </div>
+</div>
+<div class="row"><!--DASHBOARD TABLE IPS and DOMAIN-->
+    <div class="col-md-6"> 
+        <kt-portlet [class]="'kt-portlet--height-fluid'">
+                <kt-portlet-header [title]="'Lists IPs monitoring'">
+                        <kt-context-menu2></kt-context-menu2>
+                </kt-portlet-header>
+                <kt-portlet-body>
+                    <kt-ips></kt-ips>
+                </kt-portlet-body>
+        </kt-portlet>
+    </div>
+    <div class="col-md-6">
+            <kt-portlet [class]="'kt-portlet--height-fluid'">
+                    <kt-portlet-header [title]="'Lists Domains monitoring'">
+                            <kt-context-menu2></kt-context-menu2>
+                    </kt-portlet-header>
+                    <kt-portlet-body>
+                            <kt-domain></kt-domain>
+                    </kt-portlet-body>
+            </kt-portlet>
+       
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-12">
+        <kt-portlet [class]="'kt-portlet'">
+            <kt-portlet-header [title]="'Botnet by Organization'">
+            </kt-portlet-header>
+            <kt-portlet-body>
+                <kt-botnet-by-org></kt-botnet-by-org>
+            </kt-portlet-body>
+        </kt-portlet>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-6">
+        <kt-portlet [class]="'kt-portlet'">
+            <kt-portlet-header [title]="'Account leaked'">
+            </kt-portlet-header>
+            <kt-portlet-body>
+                <kt-account-leaked></kt-account-leaked>
+            </kt-portlet-body>
+        </kt-portlet>
+    </div>
+    <div class="col-xl-6">
+        <kt-portlet [class]="'kt-portlet'">
+            <kt-portlet-header [title]="'Acount leaked by domain'">
+            </kt-portlet-header>
+            <kt-portlet-body>
+                <kt-account-leaked-by-domain></kt-account-leaked-by-domain>
+            </kt-portlet-body>
+        </kt-portlet>
+    </div>
+</div>
+<div class="row">
+        <div class="col-xl-12">
+            <kt-portlet [class]="'kt-portlet'">
+                <kt-portlet-header [title]="'Contacts'">
+                </kt-portlet-header>
+                <kt-portlet-body>
+                    <kt-contacts></kt-contacts>
+                </kt-portlet-body>
+            </kt-portlet>
+        </div>
+    </div>

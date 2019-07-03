@@ -1,0 +1,18 @@
+.container-fluid{
+    margin-top:2em;
+}
+.item-list{
+    display:flex;
+}
+.tab-list li{
+    list-style: none;
+}
+.read{
+    cursor: pointer;
+}
+.read:hover{
+    color:blue;
+}
+.content{
+    display:flex;
+}

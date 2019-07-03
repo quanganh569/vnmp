@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-6"></div>
+    <div class="searchbar col-md-6 ">
+       <input class="search_input form-control input-sm " type="text" name="" placeholder="Search..." [(ngModel)]="searchText">
+    </div>
+</div>
+<br/>
+<table class="table table-hover table-bordered"  matSort (matSortChange)="sortlstIPS($event)">
+  <thead>
+    <tr class="thead-light">
+      <th scope="col" mat-sort-header="IP">IP</th>
+      <th scope="col" mat-sort-header="Purpose">Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of lstIPS|filter:searchText|paginate: { itemsPerPage: 10, currentPage: p4, id: 'fourth'}">
+      <td>{{item.IP}}</td>
+      <td>{{item.Purpose}}</td>
+    </tr>
+  </tbody>
+  <pagination-controls (pageChange)="p4 = $event" id="fourth"></pagination-controls>
+</table>

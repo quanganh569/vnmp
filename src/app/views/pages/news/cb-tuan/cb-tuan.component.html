@@ -1,0 +1,17 @@
+<div class="row"> <!--DASHBOARD WEBBOX-->
+  <div class="col-xl-12">
+      <kt-portlet [class]="'kt-portlet'">
+          <kt-portlet-body>
+            <div class="media" *ngFor="let item of lstWarning|paginate: { itemsPerPage: 10, currentPage: p9, id: 'nineth' } ">
+              <img class="mr-3 img-thumbnail" src="{{item.imgLink}}" style="width: 50px ;height: 50px;margin:0 10px 0 10px" alt="">
+              <div class="media-body">
+                <h5 class="mt-0" (click)="onDetail(item?.id)" style="cursor:pointer">{{item.title}}</h5>
+                {{item.description}} <a (click)="onDetail(item?.id)" style="cursor:pointer;color:cornflowerblue" id="read"> - Read more </a>
+              </div>
+              <span class="badge badge-primary badge-pill" [ngClass]="getStatusGlasses(item)">{{item.status}}</span>
+            </div>
+            <pagination-controls (pageChange)="p9 = $event" id="nineth"></pagination-controls>
+          </kt-portlet-body>
+      </kt-portlet>
+  </div>
+</div>
